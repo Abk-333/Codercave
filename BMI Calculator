@@ -1,0 +1,43 @@
+package delftstack;
+
+import java.util.Scanner;
+
+public class Calculate_BMI {
+
+   // method to check BMI
+    public static String BMIChecker(double Weight, double Height) {
+
+        // calculate the BMI
+        double BMI = Weight / ( Height * Height) ;
+
+        // check the range of BMI
+        if(BMI < 18.5)
+            return "Underweight";
+        else if(BMI < 25)
+            return "Normal";
+        else if(BMI < 30)
+            return "Overweight";
+        else
+            return "Obese";
+    }
+
+    public static void main(String[] args) {
+
+        double Weight = 0.0f;
+        double Height = 0.0f;
+        String BMI_Result = null;
+
+        Scanner scan_input = new Scanner(System.in);
+        System.out.print("Please enter the weight in Kgs: ");
+        Weight = scan_input.nextDouble();
+        System.out.print("Pleae enter the height in meters: ");
+        Height = scan_input.nextDouble();
+
+
+        BMI_Result = BMIChecker( Weight, Height );
+
+        System.out.println(BMI_Result);
+
+        scan_input.close();
+    }
+}
